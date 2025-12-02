@@ -1,5 +1,4 @@
-function createTable() {
-    //Write your code here
+
 	function createTable() {
     // Ask for rows and columns
     const rows = parseInt(prompt("Input number of rows"));
@@ -37,4 +36,4 @@ function createTable() {
 }
 
   
-}
+
