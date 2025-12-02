@@ -1,8 +1,11 @@
-
-	function createTable() {
+function createTable() {
     // Ask for rows and columns
-    const rows = parseInt(prompt("Input number of rows"));
-    const cols = parseInt(prompt("Input number of columns"));
+    var rowsInput = prompt("Input number of rows");
+    var colsInput = prompt("Input number of columns");
+
+    // Convert to numbers
+    var rows = parseInt(rowsInput);
+    var cols = parseInt(colsInput);
 
     // If non-numeric, do nothing
     if (isNaN(rows) || isNaN(cols)) {
@@ -16,24 +19,22 @@
     }
 
     // Get table element
-    const table = document.getElementById("myTable");
+    var table = document.getElementById("myTable");
 
     // Clear previous table content
     table.innerHTML = "";
 
     // Create table dynamically
-    for (let i = 0; i < rows; i++) {
-        const tr = document.createElement("tr");
+    for (var i = 0; i < rows; i++) {
+        var tr = document.createElement("tr");
 
-        for (let j = 0; j < cols; j++) {
-            const td = document.createElement("td");
-            td.textContent = Row-${i} Column-${j};
+        for (var j = 0; j < cols; j++) {
+            var td = document.createElement("td");
+            // 0-based indices, required format:
+            td.innerHTML = "Row-" + i + " Column-" + j;
             tr.appendChild(td);
         }
 
         table.appendChild(tr);
     }
 }
-
-  
-
